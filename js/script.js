@@ -72,7 +72,7 @@ links.forEach((link)=>{
 let surahsContent = document.querySelector(".surahsContent");
 function getSurah(){
     // fetch Surahs mete data {Name of Surahs}
-    fetch("http://api.alquran.cloud/v1/meta")
+    fetch("https://api.alquran.cloud/v1/meta")
     .then((response)=> response.json())
     .then((data)=>{
         let surahs = data.data.surahs.references;
@@ -92,7 +92,7 @@ function getSurah(){
 
         SurahsTitels.forEach((title, index) => {
             title.addEventListener('click', () => {                
-                fetch(`http://api.alquran.cloud/v1/surah/${index + 1}`)
+                fetch(`https://api.alquran.cloud/v1/surah/${index + 1}`)
                 .then((response) => response.json())
                 .then((data) => {
                     ayatContent.innerHTML = ""
